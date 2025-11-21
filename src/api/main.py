@@ -4,7 +4,13 @@ from typing import Dict, Any
 from src.core.orchestrator import orchestrator
 from src.core.models import WorkflowStatus
 
-app = FastAPI(title="ShapeShifter RAG API")
+app = FastAPI(
+    title="ShapeShifter RAG API",
+    description="API for RAG Enhanced Architecture with Multi-Agent Workflow",
+    version="1.0.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
+)
 
 class WorkflowRequest(BaseModel):
     workflow_type: str
