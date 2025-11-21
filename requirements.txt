@@ -19,6 +19,8 @@ langdetect
 textstat
 rouge-score
 bert-score
+pytest-mock
+
 
 
 
