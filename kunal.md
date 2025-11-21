@@ -43,22 +43,6 @@ npm install
 
 ## 🐛 How to Fix Issues
 
-### Step 1: Pick an Issue
-- Go to [Issues](https://github.com/karan100010/shapeshifter/issues).
-- Find one assigned to you (`@kunaaalll`).
-- Read the requirements carefully.
-
-### Step 2: Create a Branch
-Always work in my branch named as Dizzycommits
-```bash
-# Format: dizzycommits
-git checkout -b dizzycommits
-
-### Step 3: Code & Test
-- Write your code in `src/frontend/`.
-- Run the dev server to test: `npm run dev`.
-- **Debug**: Use `console.log` or browser DevTools.
-
 ### Step 4: Push & PR
 ```bash
 git add .
