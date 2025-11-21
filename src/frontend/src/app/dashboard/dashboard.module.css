@@ -1,12 +1,12 @@
 .container {
     display: flex;
     min-height: 100vh;
-    background: #f9fafb;
+    background: var(--background);
 }
 
 .main {
     flex: 1;
-    margin-left: 260px;
+    margin-left: 280px;
     display: flex;
     flex-direction: column;
 }
@@ -23,13 +23,13 @@
 .pageTitle {
     font-size: 2rem;
     font-weight: 700;
-    color: #1f2937;
+    color: var(--text-primary);
     margin: 0 0 0.5rem 0;
 }
 
 .pageSubtitle {
     font-size: 1rem;
-    color: #6b7280;
+    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -41,16 +41,17 @@
 }
 
 .recentActivity {
-    background: white;
+    background: var(--card-bg);
     border-radius: 16px;
     padding: 1.5rem;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
 }
 
 .sectionTitle {
     font-size: 1.25rem;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--text-primary);
     margin: 0 0 1.5rem 0;
 }
 
@@ -70,14 +71,14 @@
 }
 
 .activityItem:hover {
-    background: #f9fafb;
+    background: var(--hover-bg);
 }
 
 .activityIcon {
     width: 48px;
     height: 48px;
     border-radius: 10px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,12 +93,18 @@
 .activityTitle {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #1f2937;
+    color: var(--text-primary);
     margin: 0 0 0.25rem 0;
 }
 
 .activityTime {
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--text-secondary);
     margin: 0;
+}
+
+@media (max-width: 768px) {
+    .main {
+        margin-left: 0;
+    }
 }

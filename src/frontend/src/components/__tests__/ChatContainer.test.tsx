@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import ChatContainer from '@/components/ChatContainer';
 
 const mockMessages = [
@@ -18,7 +18,7 @@ describe('ChatContainer Component', () => {
 
     it('renders initial welcome message', () => {
         const mockOnSend = jest.fn();
-        render(<ChatContainer chatId="1" messages={mockMessages} onSendMessage={mockOnSend} />);
+        render(<ChatContainer messages={mockMessages} onSendMessage={mockOnSend} />);
 
         expect(screen.getByText(/Hello! I'm your RAG assistant/i)).toBeInTheDocument();
     });
@@ -35,7 +35,7 @@ describe('ChatContainer Component', () => {
             }
         ];
 
-        render(<ChatContainer chatId="1" messages={messagesWithUser} onSendMessage={mockOnSend} />);
+        render(<ChatContainer messages={messagesWithUser} onSendMessage={mockOnSend} />);
 
         // Check for typing indicator by class
         const typingIndicator = document.querySelector('.typingIndicator');
@@ -44,7 +44,7 @@ describe('ChatContainer Component', () => {
 
     it('adds user message when sent', () => {
         const mockOnSend = jest.fn();
-        render(<ChatContainer chatId="1" messages={mockMessages} onSendMessage={mockOnSend} />);
+        render(<ChatContainer messages={mockMessages} onSendMessage={mockOnSend} />);
 
         const input = screen.getByPlaceholderText('Ask me anything about your documents...');
         const sendButton = screen.getByLabelText('Send message');
@@ -73,7 +73,7 @@ describe('ChatContainer Component', () => {
             }
         ];
 
-        render(<ChatContainer chatId="1" messages={multipleMessages} onSendMessage={mockOnSend} />);
+        render(<ChatContainer messages={multipleMessages} onSendMessage={mockOnSend} />);
 
         expect(screen.getByText(/Hello! I'm your RAG assistant/i)).toBeInTheDocument();
         expect(screen.getByText('Test query')).toBeInTheDocument();
@@ -92,7 +92,7 @@ describe('ChatContainer Component', () => {
             }
         ];
 
-        render(<ChatContainer chatId="1" messages={messagesWithUser} onSendMessage={mockOnSend} />);
+        render(<ChatContainer messages={messagesWithUser} onSendMessage={mockOnSend} />);
 
         const input = screen.getByPlaceholderText('Ask me anything about your documents...');
         expect(input).toBeDisabled();
@@ -103,7 +103,7 @@ describe('ChatContainer Component', () => {
         Element.prototype.scrollIntoView = scrollIntoViewMock;
 
         const mockOnSend = jest.fn();
-        const { rerender } = render(<ChatContainer chatId="1" messages={mockMessages} onSendMessage={mockOnSend} />);
+        const { rerender } = render(<ChatContainer messages={mockMessages} onSendMessage={mockOnSend} />);
 
         const newMessages = [
             ...mockMessages,
@@ -115,7 +115,7 @@ describe('ChatContainer Component', () => {
             }
         ];
 
-        rerender(<ChatContainer chatId="1" messages={newMessages} onSendMessage={mockOnSend} />);
+        rerender(<ChatContainer messages={newMessages} onSendMessage={mockOnSend} />);
 
         expect(scrollIntoViewMock).toHaveBeenCalled();
     });

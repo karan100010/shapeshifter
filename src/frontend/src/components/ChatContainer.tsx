@@ -14,12 +14,12 @@ interface MessageType {
 }
 
 interface ChatContainerProps {
-    chatId: string;
     messages: MessageType[];
     onSendMessage: (content: string) => void;
+    onFileUpload?: (files: FileList) => void;
 }
 
-export default function ChatContainer({ chatId, messages, onSendMessage }: ChatContainerProps) {
+export default function ChatContainer({ messages, onSendMessage, onFileUpload }: ChatContainerProps) {
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = () => {
@@ -59,7 +59,7 @@ export default function ChatContainer({ chatId, messages, onSendMessage }: ChatC
                     <div ref={messagesEndRef} />
                 </div>
             </div>
-            <ChatInput onSend={onSendMessage} disabled={isTyping} />
+            <ChatInput onSend={onSendMessage} onFileUpload={onFileUpload} disabled={isTyping} />
         </div>
     );
 }

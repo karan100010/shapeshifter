@@ -12,7 +12,7 @@ export default function Dashboard() {
                 <div className={styles.content}>
                     <div className={styles.pageHeader}>
                         <h1 className={styles.pageTitle}>Dashboard</h1>
-                        <p className={styles.pageSubtitle}>Welcome back, Kunal! Here's what's happening with your projects.</p>
+                        <p className={styles.pageSubtitle}>Welcome back, Kunal! Here&apos;s what&apos;s happening with your projects.</p>
                     </div>
 
                     <div className={styles.statsGrid}>

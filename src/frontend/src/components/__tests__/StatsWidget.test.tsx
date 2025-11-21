@@ -59,7 +59,7 @@ describe('StatsWidget Component', () => {
     });
 
     it('applies correct CSS class for upward trend', () => {
-        const { container } = render(
+        render(
             <StatsWidget
                 title="Test"
                 value="100"
@@ -73,7 +73,7 @@ describe('StatsWidget Component', () => {
     });
 
     it('applies correct CSS class for downward trend', () => {
-        const { container } = render(
+        render(
             <StatsWidget
                 title="Test"
                 value="100"

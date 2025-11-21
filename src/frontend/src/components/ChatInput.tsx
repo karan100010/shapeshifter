@@ -1,15 +1,17 @@
 'use client';
 
-import { useState, type KeyboardEvent } from 'react';
+import { useState, useRef, type KeyboardEvent, type ChangeEvent } from 'react';
 import styles from './ChatInput.module.css';
 
 interface ChatInputProps {
     onSend: (message: string) => void;
+    onFileUpload?: (files: FileList) => void;
     disabled?: boolean;
 }
 
-export default function ChatInput({ onSend, disabled = false }: ChatInputProps) {
+export default function ChatInput({ onSend, onFileUpload, disabled = false }: ChatInputProps) {
     const [message, setMessage] = useState('');
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleSend = () => {
         if (message.trim() && !disabled) {
@@ -22,6 +24,16 @@ export default function ChatInput({ onSend, disabled = false }: ChatInputProps) 
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             handleSend();
+        }
+    };
+
+    const handleFileClick = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files && e.target.files.length > 0 && onFileUpload) {
+            onFileUpload(e.target.files);
         }
     };
 
@@ -48,9 +60,22 @@ export default function ChatInput({ onSend, disabled = false }: ChatInputProps) 
                 </button>
             </div>
             <div className={styles.inputArea}>
-                <button className={styles.uploadBtn} title="Upload document">
+                <button
+                    className={styles.uploadBtn}
+                    title="Upload document"
+                    onClick={handleFileClick}
+                    type="button"
+                >
                     📎
                 </button>
+                <input
+                    ref={fileInputRef}
+                    type="file"
+                    multiple
+                    accept=".pdf,.txt,.docx,.doc"
+                    onChange={handleFileChange}
+                    style={{ display: 'none' }}
+                />
                 <textarea
                     className={styles.input}
                     placeholder="Ask me anything about your documents..."

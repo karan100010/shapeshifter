@@ -1,0 +1,105 @@
+
+> frontend@0.1.0 lint
+> eslint
+
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\jest.config.js
+  1:18  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\dashboard\page.tsx
+  15:85  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  15:92  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\page.tsx
+  28:27  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\page.tsx:28:27
+  26 |       id: '1',
+  27 |       title: 'Document Analysis',
+> 28 |       timestamp: new Date(Date.now() - 3600000),
+     |                           ^^^^^^^^^^ Cannot call impure function
+  29 |       messages: [
+  30 |         {
+  31 |           id: '1',                                                                                                                                                      react-hooks/purity
+  34:31  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\page.tsx:34:31
+  32 |           role: 'assistant',
+  33 |           content: 'Hello! I\'m your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?',
+> 34 |           timestamp: new Date(Date.now() - 3600000),
+     |                               ^^^^^^^^^^ Cannot call impure function
+  35 |         }
+  36 |       ]
+  37 |     },   react-hooks/purity
+  41:27  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\page.tsx:41:27
+  39 |       id: '2',
+  40 |       title: 'Query about entities',
+> 41 |       timestamp: new Date(Date.now() - 7200000),
+     |                           ^^^^^^^^^^ Cannot call impure function
+  42 |       messages: [
+  43 |         {
+  44 |           id: '2-1',                                                                                                                                                 react-hooks/purity
+  47:31  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\page.tsx:47:31
+  45 |           role: 'assistant',
+  46 |           content: 'Hello! I\'m your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?',
+> 47 |           timestamp: new Date(Date.now() - 7200000),
+     |                               ^^^^^^^^^^ Cannot call impure function
+  48 |         }
+  49 |       ]
+  50 |     },   react-hooks/purity
+  54:27  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\page.tsx:54:27
+  52 |       id: '3',
+  53 |       title: 'Graph relationships',
+> 54 |       timestamp: new Date(Date.now() - 86400000),
+     |                           ^^^^^^^^^^ Cannot call impure function
+  55 |       messages: [
+  56 |         {
+  57 |           id: '3-1',                                                                                                                                                 react-hooks/purity
+  60:31  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\app\page.tsx:60:31
+  58 |           role: 'assistant',
+  59 |           content: 'Hello! I\'m your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?',
+> 60 |           timestamp: new Date(Date.now() - 86400000),
+     |                               ^^^^^^^^^^ Cannot call impure function
+  61 |         }
+  62 |       ]
+  63 |     },  react-hooks/purity
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\components\ChatContainer.tsx
+  22:41  warning  'chatId' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\components\Message.tsx
+  3:20  warning  'useRef' is defined but never used     @typescript-eslint/no-unused-vars
+  3:28  warning  'useEffect' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\components\__tests__\ChatContainer.test.tsx
+  1:37  warning  'waitFor' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\components\__tests__\Sidebar.test.tsx
+  11:33  error  A `require()` style import is forbidden  @typescript-eslint/no-require-imports
+
+C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\src\frontend\src\components\__tests__\StatsWidget.test.tsx
+  62:17  warning  'container' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  76:17  warning  'container' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Γ£û 16 problems (10 errors, 6 warnings)
+

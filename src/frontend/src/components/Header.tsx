@@ -1,6 +1,7 @@
 'use client';
 
 import styles from './Header.module.css';
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
     return (
@@ -14,6 +15,7 @@ export default function Header() {
                 />
             </div>
             <div className={styles.userSection}>
+                <ThemeToggle />
                 <button className={styles.notificationBtn}>
                     <span className={styles.notificationIcon}>🔔</span>
                     <span className={styles.badge}>3</span>

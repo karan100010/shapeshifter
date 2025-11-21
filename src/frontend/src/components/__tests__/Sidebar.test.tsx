@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import Sidebar from '@/components/Sidebar';
 
+import { usePathname } from 'next/navigation';
+
 // Mock usePathname from next/navigation
 jest.mock('next/navigation', () => ({
     usePathname: jest.fn(),
@@ -8,8 +10,7 @@ jest.mock('next/navigation', () => ({
 
 describe('Sidebar Component', () => {
     beforeEach(() => {
-        const { usePathname } = require('next/navigation');
-        usePathname.mockReturnValue('/dashboard');
+        (usePathname as jest.Mock).mockReturnValue('/dashboard');
     });
 
     it('renders the sidebar with logo', () => {

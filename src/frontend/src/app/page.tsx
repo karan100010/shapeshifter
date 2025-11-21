@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ChatSidebar from '@/components/ChatSidebar';
 import ChatContainer from '@/components/ChatContainer';
+import ThemeToggle from '@/components/ThemeToggle';
 import styles from './page.module.css';
 
 interface MessageType {
@@ -25,39 +26,39 @@ export default function Home() {
     {
       id: '1',
       title: 'Document Analysis',
-      timestamp: new Date(Date.now() - 3600000),
+      timestamp: new Date('2024-01-01T10:00:00'),
       messages: [
         {
           id: '1',
           role: 'assistant',
           content: 'Hello! I\'m your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?',
-          timestamp: new Date(Date.now() - 3600000),
+          timestamp: new Date('2024-01-01T10:00:00'),
         }
       ]
     },
     {
       id: '2',
       title: 'Query about entities',
-      timestamp: new Date(Date.now() - 7200000),
+      timestamp: new Date('2024-01-01T09:00:00'),
       messages: [
         {
           id: '2-1',
           role: 'assistant',
           content: 'Hello! I\'m your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?',
-          timestamp: new Date(Date.now() - 7200000),
+          timestamp: new Date('2024-01-01T09:00:00'),
         }
       ]
     },
     {
       id: '3',
       title: 'Graph relationships',
-      timestamp: new Date(Date.now() - 86400000),
+      timestamp: new Date('2024-01-01T08:00:00'),
       messages: [
         {
           id: '3-1',
           role: 'assistant',
           content: 'Hello! I\'m your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?',
-          timestamp: new Date(Date.now() - 86400000),
+          timestamp: new Date('2024-01-01T08:00:00'),
         }
       ]
     },
@@ -136,6 +137,14 @@ export default function Home() {
     }, 1500);
   };
 
+  const handleFileUpload = (files: FileList) => {
+    console.log('Files uploaded in chat:', Array.from(files).map(f => f.name));
+    // TODO: Send files to backend API
+    // For now, just show a message
+    const fileNames = Array.from(files).map(f => f.name).join(', ');
+    handleSendMessage(`I've uploaded: ${fileNames}`);
+  };
+
   const currentChat = chats.find(c => c.id === activeChat);
 
   return (
@@ -147,11 +156,14 @@ export default function Home() {
         onNewChat={handleNewChat}
       />
       <main className={styles.main}>
+        <div className={styles.chatHeader}>
+          <ThemeToggle />
+        </div>
         {currentChat && (
           <ChatContainer
-            chatId={currentChat.id}
             messages={currentChat.messages}
             onSendMessage={handleSendMessage}
+            onFileUpload={handleFileUpload}
           />
         )}
       </main>
