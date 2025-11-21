@@ -63,11 +63,11 @@ class QueryAnalyzerAgent(BaseAgent):
     def _classify_intent(self, query: str) -> str:
         """Classify query intent using heuristics."""
         query_lower = query.lower()
-        if any(w in query_lower for in ["compare", "difference", "versus", "vs"]):
+        if any(w in query_lower for w in ["compare", "difference", "versus", "vs"]):
             return "comparison"
-        if any(w in query_lower for in ["count", "total", "average", "sum", "how many"]):
+        if any(w in query_lower for w in ["count", "total", "average", "sum", "how many"]):
             return "aggregation"
-        if any(w in query_lower for in ["how", "why", "explain", "cause"]):
+        if any(w in query_lower for w in ["how", "why", "explain", "cause"]):
             return "multi_hop" # Likely requires reasoning
         return "factual"
 
