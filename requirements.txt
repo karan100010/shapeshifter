@@ -15,5 +15,8 @@ networkx
 numpy
 scikit-learn
 rank-bm25
+langdetect
+textstat
+
 
 
