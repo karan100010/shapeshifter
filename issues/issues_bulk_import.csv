@@ -1,0 +1,490 @@
+Title,Body,Labels,Assignee,Milestone
+"API Gateway Setup","Implement a production-ready API Gateway with authentication, rate limiting, and load balancing capabilities.
+
+**Acceptance Criteria:**
+- JWT-based authentication implemented
+- Rate limiting per user/API key
+- Load balancing across multiple backend instances
+- Request/response logging
+- API versioning support
+- CORS configuration
+- Health check endpoints
+
+**Technical Requirements:**
+- Framework: FastAPI or Flask with extensions
+- Authentication: JWT tokens with refresh mechanism
+- Rate Limiting: Redis-based token bucket algorithm
+- Load Balancing: Nginx or built-in round-robin
+
+**Dependencies:**
+- Redis for rate limiting state
+- PostgreSQL for user/API key management","infrastructure,priority-high",,
+"Event Bus Implementation","Set up a message broker (RabbitMQ or Kafka) for asynchronous agent communication and event-driven workflows.
+
+**Acceptance Criteria:**
+- Message broker deployed and configured
+- Topic/queue structure defined
+- Publisher/subscriber pattern implemented
+- Dead letter queue for failed messages
+- Message persistence enabled
+- Monitoring and metrics collection
+
+**Technical Requirements:**
+- Technology: RabbitMQ (recommended) or Kafka
+- Message Format: JSON with schema validation
+- Delivery Guarantee: At-least-once delivery
+- Retry Logic: Exponential backoff","infrastructure,priority-high",,
+"Control Plane Orchestrator","Implement the event-driven orchestrator for managing agent lifecycle and workflow execution with checkpointing and recovery.
+
+**Acceptance Criteria:**
+- Workflow state management (PENDING, RUNNING, COMPLETED, FAILED, PAUSED)
+- Agent registry and discovery
+- Checkpoint creation and recovery
+- Workflow progress tracking
+- Error handling and retry logic
+- Workflow cancellation support
+
+**Technical Requirements:**
+- Language: Python with asyncio
+- State Storage: PostgreSQL
+- Event Bus Integration: Subscribe to agent completion/failure events
+- Workflow Types: Indexing, Query, Optimization
+
+**Dependencies:**
+- Event Bus Implementation
+- State Store Setup","infrastructure,agent,priority-high",,
+"State Store Setup","Configure PostgreSQL database for workflow state, metadata, and system configuration storage.
+
+**Acceptance Criteria:**
+- PostgreSQL instance deployed
+- Database schema designed and created
+- Connection pooling configured
+- Backup and recovery procedures
+- Migration scripts
+- Performance indexes created
+
+**Technical Requirements:**
+- PostgreSQL Version: 14+
+- ORM: SQLAlchemy
+- Migration Tool: Alembic
+- Connection Pool: pgbouncer or SQLAlchemy pool
+
+**Schema Tables:**
+- workflows, agents, users, api_keys, metrics","storage,infrastructure,priority-high",,
+"Monitoring & Observability","Implement comprehensive monitoring, logging, and tracing using Prometheus, Grafana, and Jaeger/OpenTelemetry.
+
+**Acceptance Criteria:**
+- Prometheus metrics collection
+- Grafana dashboards for key metrics
+- Distributed tracing with Jaeger
+- Centralized logging
+- Alerting rules configured
+- Performance profiling
+
+**Key Metrics:**
+- Request latency (p50, p95, p99)
+- Throughput (requests/sec)
+- Error rates
+- Agent execution times
+- Database query performance
+- Cache hit rates","infrastructure,deployment,priority-medium",,
+"Vector Database Setup","Deploy and configure a vector database (Milvus, Qdrant, or Weaviate) for embedding storage and similarity search.
+
+**Acceptance Criteria:**
+- Vector database deployed
+- Collection/index created with appropriate schema
+- Similarity search configured (cosine, dot product, L2)
+- Indexing strategy optimized (IVF, HNSW)
+- Batch insertion support
+- Filtering capabilities
+
+**Technical Requirements:**
+- Recommended: Milvus or Qdrant
+- Embedding Dimension: 768 or 1536
+- Index Type: HNSW for speed
+- Distance Metric: Cosine similarity","storage,priority-high",,
+"Neo4j Graph Database","Set up Neo4j graph database with schema design, constraints, and indexes for knowledge graph storage.
+
+**Acceptance Criteria:**
+- Neo4j instance deployed
+- Graph schema implemented
+- Constraints and indexes created
+- Full-text search indexes configured
+- Graph Data Science library installed
+- Backup procedures established
+
+**Schema Components:**
+- Node Types: Document, Chunk, Entity, Concept
+- Relationships: CONTAINS, MENTIONS, RELATED_TO, etc.
+- Constraints: Unique IDs for all node types","storage,graph-rag,priority-high",,
+"PostgreSQL Metadata Store","Configure PostgreSQL for metadata storage including document metadata, user data, and system configuration.
+
+**Acceptance Criteria:**
+- Database instance configured
+- Metadata schema designed
+- Indexes for common queries
+- JSON/JSONB support for flexible metadata
+- Full-text search capabilities
+- Partitioning for large tables","storage,priority-high",,
+"Redis Cache Layer","Implement Redis caching for frequently accessed data, rate limiting state, and session management.
+
+**Acceptance Criteria:**
+- Redis instance deployed
+- Cache eviction policy configured (LRU)
+- TTL strategies for different data types
+- Cache invalidation logic
+- Pub/sub for cache updates
+- Persistence configuration
+
+**Cache Use Cases:**
+- Query results caching
+- Embedding caching
+- Rate limiting counters
+- Session storage","storage,infrastructure,priority-medium",,
+"Entity Extraction Pipeline","Implement Named Entity Recognition (NER) pipeline using spaCy and GLiNER for extracting entities from text chunks.
+
+**Acceptance Criteria:**
+- spaCy transformer model integrated
+- Custom entity patterns added
+- Entity confidence scoring
+- Entity linking and disambiguation
+- Entity attribute extraction
+- Batch processing support
+
+**Technical Requirements:**
+- Model: en_core_web_trf (spaCy transformer)
+- Additional: GLiNER for domain-specific entities
+- Entity Types: PERSON, ORG, GPE, DATE, PRODUCT, etc.","graph-rag,priority-high",,
+"Relationship Extraction","Implement relationship extraction using dependency parsing, pattern matching, and Open Information Extraction (OpenIE).
+
+**Acceptance Criteria:**
+- Dependency parsing for SVO patterns
+- Custom relationship patterns
+- OpenIE integration
+- Relationship confidence scoring
+- Relationship type classification
+- Cross-sentence relationships
+
+**Methods:**
+- Dependency parsing (spaCy)
+- Pattern matching
+- OpenIE","graph-rag,priority-high",,
+"Coreference Resolution","Implement coreference resolution to link entity mentions across chunks and resolve pronouns to entities.
+
+**Acceptance Criteria:**
+- Pronoun resolution
+- Cross-chunk entity linking
+- Canonical entity ID assignment
+- Mention clustering
+- Confidence scoring
+
+**Technical Requirements:**
+- Library: neuralcoref or AllenNLP coreference
+- Strategy: Within-document and cross-document resolution","graph-rag,priority-medium",,
+"Knowledge Graph Construction","Build the knowledge graph in Neo4j by creating nodes and relationships from extracted entities and relationships.
+
+**Acceptance Criteria:**
+- Document and Chunk nodes created
+- Entity nodes with deduplication
+- Relationship edges created
+- Sequential chunk linking (NEXT edges)
+- Entity co-occurrence computation
+- Batch insertion for performance
+
+**Dependencies:**
+- Neo4j Graph Database
+- Entity Extraction
+- Relationship Extraction","graph-rag,priority-high",,
+"Graph Schema Design","Design and implement the Neo4j graph schema with constraints, indexes, and full-text search capabilities.
+
+**Acceptance Criteria:**
+- Node type constraints defined
+- Unique ID constraints created
+- Property indexes for performance
+- Full-text search indexes
+- Relationship type definitions
+- Schema documentation
+
+**Constraints:**
+- Unique IDs for Entity, Document, Chunk, Concept","graph-rag,storage,priority-high",,
+"Community Detection","Implement community detection using Neo4j Graph Data Science to identify entity clusters and topic communities.
+
+**Acceptance Criteria:**
+- GDS graph projection
+- Louvain algorithm implementation
+- Community ID assignment to entities
+- Community statistics computation
+- Visualization support
+
+**Technical Requirements:**
+- Algorithm: Louvain (gds.louvain)
+- Graph Projection: Entity nodes with RELATED_TO edges","graph-rag,priority-medium",,
+"Vector Retriever Agent","Implement dense vector retrieval agent for semantic similarity search using embeddings.
+
+**Acceptance Criteria:**
+- Query embedding generation
+- Similarity search in vector DB
+- Top-k retrieval
+- Score normalization
+- Metadata filtering
+- Batch query support
+
+**Dependencies:**
+- Vector Database Setup
+- Embedding Agent","agent,retrieval,priority-high",,
+"Graph Retriever Agent","Implement graph-based retrieval using entity matching, relationship traversal, and multi-hop reasoning.
+
+**Acceptance Criteria:**
+- Entity-based retrieval
+- Relationship pattern matching
+- Multi-hop path traversal
+- Community-based retrieval
+- Context enrichment
+- Reasoning path extraction
+
+**Strategies:**
+- Entity-based, Relation-based, Multi-hop, Community-based","agent,retrieval,graph-rag,priority-high",,
+"Sparse Retriever Agent","Implement BM25-based sparse retrieval for keyword matching and lexical search.
+
+**Acceptance Criteria:**
+- BM25 algorithm implementation
+- Inverted index construction
+- Term frequency computation
+- Document frequency tracking
+- Top-k retrieval
+- Query preprocessing
+
+**Technical Requirements:**
+- Library: rank-bm25
+- Parameters: k1=1.5, b=0.75","agent,retrieval,priority-medium",,
+"Hybrid Fusion Agent","Implement fusion strategy to combine results from vector, sparse, and graph retrieval methods.
+
+**Acceptance Criteria:**
+- Reciprocal Rank Fusion (RRF)
+- Score normalization across methods
+- Weighted fusion strategies
+- Deduplication of results
+- Configurable fusion weights
+- Result ranking
+
+**Dependencies:**
+- Vector Retriever
+- Graph Retriever
+- Sparse Retriever","agent,retrieval,priority-high",,
+"Reranker Agent","Implement cross-encoder based reranking to improve retrieval precision.
+
+**Acceptance Criteria:**
+- Cross-encoder model integration
+- Query-document pair scoring
+- Top-k reranking
+- Score calibration
+- Batch processing
+- Fallback to original ranking
+
+**Technical Requirements:**
+- Model: cross-encoder/ms-marco-MiniLM-L-6-v2","agent,retrieval,priority-medium",,
+"Query Analyzer Agent","Implement query understanding and decomposition to identify entities, intent, and retrieval strategy.
+
+**Acceptance Criteria:**
+- Query entity extraction
+- Intent classification
+- Query type detection
+- Retrieval strategy selection
+- Query expansion
+- Complexity assessment","agent,priority-high",,
+"Analyzer Agent","Implement document analysis agent for metadata extraction, language detection, and quality assessment.
+
+**Acceptance Criteria:**
+- Document type detection
+- Language detection
+- Quality scoring
+- Metadata extraction
+- Structure analysis
+- Summary generation","agent,priority-high",,
+"Chunker Agent","Implement intelligent document chunking with semantic awareness and overlap handling.
+
+**Acceptance Criteria:**
+- Sentence-based chunking
+- Semantic chunking (topic boundaries)
+- Configurable chunk size and overlap
+- Chunk metadata generation
+- Boundary detection
+- Chunk quality scoring
+
+**Technical Requirements:**
+- Chunk Size: 256-512 tokens
+- Overlap: 50-100 tokens","agent,priority-high",,
+"Embedding Agent","Implement embedding generation for chunks using sentence-transformers or OpenAI embeddings.
+
+**Acceptance Criteria:**
+- Batch embedding generation
+- Model selection (local vs API)
+- Embedding caching
+- Normalization
+- Error handling and retries
+- Performance optimization
+
+**Models:**
+- sentence-transformers/all-MiniLM-L6-v2 (local)
+- OpenAI text-embedding-3-small","agent,priority-high",,
+"Generator Agent","Implement LLM-based response generation with context from retrieved chunks.
+
+**Acceptance Criteria:**
+- Prompt template management
+- Context injection
+- LLM integration (local or API)
+- Response streaming
+- Citation generation
+- Hallucination detection
+
+**LLMs:**
+- Llama2, Mistral (local)
+- GPT-4, Claude (API)","agent,priority-high",,
+"Verifier Agent","Implement result verification to check factual consistency and answer quality.
+
+**Acceptance Criteria:**
+- Factual consistency checking
+- Citation verification
+- Answer completeness assessment
+- Confidence scoring
+- Error detection
+- Quality metrics
+
+**Methods:**
+- Entailment checking
+- Fact verification
+- NLI models","agent,priority-medium",,
+"Evaluator Agent","Implement quality assessment and continuous evaluation of the RAG system.
+
+**Acceptance Criteria:**
+- Retrieval metrics (recall, precision, MRR)
+- Generation metrics (BLEU, ROUGE, BERTScore)
+- End-to-end quality metrics
+- Performance tracking
+- A/B testing support
+- Metric visualization
+
+**Metrics:**
+- Recall@k, Precision@k, MRR, NDCG, BLEU, ROUGE, BERTScore","agent,priority-medium",,
+"Multi-Hop Reasoning","Implement multi-hop reasoning capability to answer complex queries requiring multiple reasoning steps.
+
+**Acceptance Criteria:**
+- Path finding between entities
+- Shortest path computation
+- Path relevance scoring
+- Chunk aggregation along paths
+- Reasoning path explanation
+- Configurable max hops
+
+**Technical Requirements:**
+- Cypher: shortestPath algorithm
+- Max Hops: 1-3","retrieval,graph-rag,priority-medium",,
+"Entity-Based Retrieval","Implement entity-centric retrieval focusing on specific entities and their contexts.
+
+**Acceptance Criteria:**
+- Entity matching with fuzzy search
+- Entity context extraction
+- Related entity discovery
+- Entity importance scoring
+- Attribute-based filtering
+- Entity timeline construction","retrieval,graph-rag,priority-medium",,
+"Community-Based Retrieval","Implement topic-based retrieval using entity communities for broad topic exploration.
+
+**Acceptance Criteria:**
+- Community identification from query
+- Community-based chunk retrieval
+- Topic coherence scoring
+- Cross-community bridging
+- Community summarization
+
+**Dependencies:**
+- Community Detection
+- Graph Retriever Agent","retrieval,graph-rag,priority-low",,
+"Docker Compose Setup","Create Docker Compose configuration for local development environment with all services.
+
+**Acceptance Criteria:**
+- All services containerized
+- Service dependencies configured
+- Volume mounts for persistence
+- Environment variable management
+- Health checks for all services
+- Easy start/stop commands
+
+**Services:**
+- API Gateway, PostgreSQL, Neo4j, Redis, Vector DB, RabbitMQ, Prometheus, Grafana","deployment,priority-high",,
+"Kubernetes Deployment","Create Kubernetes manifests for production deployment with HA and auto-scaling.
+
+**Acceptance Criteria:**
+- Deployment manifests for all services
+- Service and Ingress configurations
+- ConfigMaps and Secrets management
+- Persistent Volume Claims
+- Horizontal Pod Autoscaling
+- Resource limits and requests
+- Liveness and readiness probes","deployment,priority-medium",,
+"CI/CD Pipeline","Set up CI/CD pipeline for automated testing, building, and deployment.
+
+**Acceptance Criteria:**
+- Automated testing on PR
+- Docker image building
+- Image scanning for vulnerabilities
+- Automated deployment to staging
+- Manual approval for production
+- Rollback capabilities
+
+**Platform:**
+- GitHub Actions, GitLab CI, or Jenkins
+- Stages: Lint, Test, Build, Scan, Deploy","deployment,priority-medium",,
+"Configuration Management","Implement environment-specific configuration management with secrets handling.
+
+**Acceptance Criteria:**
+- Configuration file structure
+- Environment-specific configs (dev, staging, prod)
+- Secrets management (vault, k8s secrets)
+- Configuration validation
+- Hot reload support
+- Configuration versioning
+
+**Format:**
+- YAML or JSON
+- Secrets: HashiCorp Vault or Kubernetes Secrets","deployment,infrastructure,priority-medium",,
+"Unit Test Suite","Implement comprehensive unit tests for all components with high code coverage.
+
+**Acceptance Criteria:**
+- Test coverage > 80%
+- Tests for all agents
+- Tests for all retrieval strategies
+- Mock external dependencies
+- Fast test execution (< 5 min)
+- CI integration
+
+**Framework:**
+- pytest
+- pytest-cov
+- pytest-mock","testing,priority-high",,
+"Integration Tests","Implement end-to-end integration tests for complete workflows.
+
+**Acceptance Criteria:**
+- Indexing workflow tests
+- Query workflow tests
+- Multi-agent coordination tests
+- Database integration tests
+- API endpoint tests
+- Performance benchmarks
+
+**Test Scenarios:**
+- Document ingestion and indexing
+- Query processing end-to-end
+- Error handling and recovery","testing,priority-high",,
+"API Documentation","Create comprehensive API documentation using OpenAPI/Swagger.
+
+**Acceptance Criteria:**
+- OpenAPI 3.0 specification
+- Interactive Swagger UI
+- Request/response examples
+- Authentication documentation
+- Error code documentation
+- Rate limiting documentation
+
+**Endpoints:**
+- /index, /query, /health, /metrics, /admin","documentation,priority-medium",,
