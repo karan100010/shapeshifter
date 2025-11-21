@@ -1,0 +1,1023 @@
+
+> frontend@0.1.0 test
+> jest
+
+FAIL src/components/__tests__/ChatContainer.test.tsx
+  ΓùÅ ChatContainer Component ΓÇ║ renders initial welcome message
+
+    TypeError: messagesEndRef.current?.scrollIntoView is not a function
+
+      27 |
+      28 |     const scrollToBottom = () => {
+    > 29 |         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+         |                                 ^
+      30 |     };
+      31 |
+      32 |     useEffect(() => {
+
+      at scrollIntoView (src/components/ChatContainer.tsx:29:33)
+      at scrollToBottom (src/components/ChatContainer.tsx:33:9)
+      at Object.react_stack_bottom_frame (node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)
+      at runWithFiberInDEV (node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)
+      at commitHookPassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:13336:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15484:13)
+      at recursivelyTraversePassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:15439:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15519:11)
+      at flushPassiveEffects (node_modules/react-dom/cjs/react-dom-client.development.js:18432:9)
+      at node_modules/react-dom/cjs/react-dom-client.development.js:17923:15
+      at flushActQueue (node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (node_modules/react/cjs/react.development.js:884:10)
+      at node_modules/@testing-library/react/dist/act-compat.js:47:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:190:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:292:10)
+      at Object.<anonymous> (src/components/__tests__/ChatContainer.test.tsx:6:15)
+
+  ΓùÅ ChatContainer Component ΓÇ║ displays typing indicator when sending message
+
+    TypeError: messagesEndRef.current?.scrollIntoView is not a function
+
+      27 |
+      28 |     const scrollToBottom = () => {
+    > 29 |         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+         |                                 ^
+      30 |     };
+      31 |
+      32 |     useEffect(() => {
+
+      at scrollIntoView (src/components/ChatContainer.tsx:29:33)
+      at scrollToBottom (src/components/ChatContainer.tsx:33:9)
+      at Object.react_stack_bottom_frame (node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)
+      at runWithFiberInDEV (node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)
+      at commitHookPassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:13336:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15484:13)
+      at recursivelyTraversePassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:15439:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15519:11)
+      at flushPassiveEffects (node_modules/react-dom/cjs/react-dom-client.development.js:18432:9)
+      at node_modules/react-dom/cjs/react-dom-client.development.js:17923:15
+      at flushActQueue (node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (node_modules/react/cjs/react.development.js:884:10)
+      at node_modules/@testing-library/react/dist/act-compat.js:47:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:190:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:292:10)
+      at Object.<anonymous> (src/components/__tests__/ChatContainer.test.tsx:12:15)
+
+  ΓùÅ ChatContainer Component ΓÇ║ adds user message when sent
+
+    TypeError: messagesEndRef.current?.scrollIntoView is not a function
+
+      27 |
+      28 |     const scrollToBottom = () => {
+    > 29 |         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+         |                                 ^
+      30 |     };
+      31 |
+      32 |     useEffect(() => {
+
+      at scrollIntoView (src/components/ChatContainer.tsx:29:33)
+      at scrollToBottom (src/components/ChatContainer.tsx:33:9)
+      at Object.react_stack_bottom_frame (node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)
+      at runWithFiberInDEV (node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)
+      at commitHookPassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:13336:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15484:13)
+      at recursivelyTraversePassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:15439:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15519:11)
+      at flushPassiveEffects (node_modules/react-dom/cjs/react-dom-client.development.js:18432:9)
+      at node_modules/react-dom/cjs/react-dom-client.development.js:17923:15
+      at flushActQueue (node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (node_modules/react/cjs/react.development.js:884:10)
+      at node_modules/@testing-library/react/dist/act-compat.js:47:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:190:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:292:10)
+      at Object.<anonymous> (src/components/__tests__/ChatContainer.test.tsx:25:15)
+
+  ΓùÅ ChatContainer Component ΓÇ║ displays AI response after delay
+
+    TypeError: messagesEndRef.current?.scrollIntoView is not a function
+
+      27 |
+      28 |     const scrollToBottom = () => {
+    > 29 |         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+         |                                 ^
+      30 |     };
+      31 |
+      32 |     useEffect(() => {
+
+      at scrollIntoView (src/components/ChatContainer.tsx:29:33)
+      at scrollToBottom (src/components/ChatContainer.tsx:33:9)
+      at Object.react_stack_bottom_frame (node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)
+      at runWithFiberInDEV (node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)
+      at commitHookPassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:13336:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15484:13)
+      at recursivelyTraversePassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:15439:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15519:11)
+      at flushPassiveEffects (node_modules/react-dom/cjs/react-dom-client.development.js:18432:9)
+      at node_modules/react-dom/cjs/react-dom-client.development.js:17923:15
+      at flushActQueue (node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (node_modules/react/cjs/react.development.js:884:10)
+      at node_modules/@testing-library/react/dist/act-compat.js:47:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:190:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:292:10)
+      at Object.<anonymous> (src/components/__tests__/ChatContainer.test.tsx:37:15)
+
+  ΓùÅ ChatContainer Component ΓÇ║ disables input while AI is typing
+
+    TypeError: messagesEndRef.current?.scrollIntoView is not a function
+
+      27 |
+      28 |     const scrollToBottom = () => {
+    > 29 |         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+         |                                 ^
+      30 |     };
+      31 |
+      32 |     useEffect(() => {
+
+      at scrollIntoView (src/components/ChatContainer.tsx:29:33)
+      at scrollToBottom (src/components/ChatContainer.tsx:33:9)
+      at Object.react_stack_bottom_frame (node_modules/react-dom/cjs/react-dom-client.development.js:25989:20)
+      at runWithFiberInDEV (node_modules/react-dom/cjs/react-dom-client.development.js:874:13)
+      at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom-client.development.js:13249:29)
+      at commitHookPassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:13336:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15484:13)
+      at recursivelyTraversePassiveMountEffects (node_modules/react-dom/cjs/react-dom-client.development.js:15439:11)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom-client.development.js:15519:11)
+      at flushPassiveEffects (node_modules/react-dom/cjs/react-dom-client.development.js:18432:9)
+      at node_modules/react-dom/cjs/react-dom-client.development.js:17923:15
+      at flushActQueue (node_modules/react/cjs/react.development.js:590:34)
+      at process.env.NODE_ENV.exports.act (node_modules/react/cjs/react.development.js:884:10)
+      at node_modules/@testing-library/react/dist/act-compat.js:47:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:190:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:292:10)
+      at Object.<anonymous> (src/components/__tests__/ChatContainer.test.tsx:52:15)
+
+  ΓùÅ ChatContainer Component ΓÇ║ scrolls to bottom when new message is added
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/send/i`
+
+    Here are the accessible roles:
+
+      paragraph:
+
+      Name "":
+      <p
+        class="text"
+      />
+
+      --------------------------------------------------
+      button:
+
+      Name "≡ƒôï Copy":
+      <button
+        class="copyBtn"
+        title="Copy message"
+      />
+
+      Name "≡ƒÆí What documents are available?":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Explain the main concepts":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Summarize the key findings":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒôÄ":
+      <button
+        class="uploadBtn"
+        title="Upload document"
+      />
+
+      Name "Γ₧ñ":
+      <button
+        class="sendBtn"
+        disabled=""
+      />
+
+      --------------------------------------------------
+      textbox:
+
+      Name "":
+      <textarea
+        class="input"
+        placeholder="Ask me anything about your documents..."
+        rows="1"
+      />
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="messagesArea"
+          >
+            <div
+              class="messages"
+            >
+              <div
+                class="message assistant"
+              >
+                <div
+                  class="avatar"
+                >
+                  ≡ƒñû
+                </div>
+                <div
+                  class="content"
+                >
+                  <div
+                    class="bubble"
+                  >
+                    <p
+                      class="text"
+                    >
+                      Hello! I'm your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?
+                    </p>
+                  </div>
+                  <div
+                    class="meta"
+                  >
+                    <span
+                      class="timestamp"
+                    >
+                      12:17 am
+                    </span>
+                    <button
+                      class="copyBtn"
+                      title="Copy message"
+                    >
+                      ≡ƒôï Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+          <div
+            class="container"
+          >
+            <div
+              class="suggestions"
+            >
+              <button
+                class="suggestion"
+              >
+                ≡ƒÆí What documents are available?
+              </button>
+              <button
+                class="suggestion"
+              >
+                ≡ƒÆí Explain the main concepts
+              </button>
+              <button
+                class="suggestion"
+              >
+                ≡ƒÆí Summarize the key findings
+              </button>
+            </div>
+            <div
+              class="inputArea"
+            >
+              <button
+                class="uploadBtn"
+                title="Upload document"
+              >
+                ≡ƒôÄ
+              </button>
+              <textarea
+                class="input"
+                placeholder="Ask me anything about your documents..."
+                rows="1"
+              />
+              <button
+                class="sendBtn"
+                disabled=""
+              >
+                <span
+                  class="sendIcon"
+                >
+                  Γ₧ñ
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      69 |
+      70 |         const input = screen.getByPlaceholderText('Ask me anything about your documents...');
+    > 71 |         const sendButton = screen.getByRole('button', { name: /send/i });
+         |                                   ^
+      72 |
+      73 |         fireEvent.change(input, { target: { value: 'Test' } });
+      74 |         fireEvent.click(sendButton);
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByRole (src/components/__tests__/ChatContainer.test.tsx:71:35)
+
+FAIL src/components/__tests__/StatsWidget.test.tsx
+  ΓùÅ StatsWidget Component ΓÇ║ renders widget with title and value
+
+    TestingLibraryElementError: Unable to find an element with the text: TOTAL DOCUMENTS. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="widget"
+        >
+          <div
+            class="iconContainer"
+          >
+            <span
+              class="icon"
+            >
+              ≡ƒôä
+            </span>
+          </div>
+          <div
+            class="content"
+          >
+            <h3
+              class="title"
+            >
+              Total Documents
+            </h3>
+            <p
+              class="value"
+            >
+              1,234
+            </p>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      11 |             />
+      12 |         );
+    > 13 |         expect(screen.getByText('TOTAL DOCUMENTS')).toBeInTheDocument();
+         |                       ^
+      14 |         expect(screen.getByText('1,234')).toBeInTheDocument();
+      15 |         expect(screen.getByText('≡ƒôä')).toBeInTheDocument();
+      16 |     });
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/__tests__/StatsWidget.test.tsx:13:23)
+
+  ΓùÅ StatsWidget Component ΓÇ║ renders widget without change indicator
+
+    TestingLibraryElementError: Unable to find an element with the text: API CALLS. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="widget"
+        >
+          <div
+            class="iconContainer"
+          >
+            <span
+              class="icon"
+            >
+              ΓÜí
+            </span>
+          </div>
+          <div
+            class="content"
+          >
+            <h3
+              class="title"
+            >
+              API Calls
+            </h3>
+            <p
+              class="value"
+            >
+              12.4K
+            </p>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      52 |             />
+      53 |         );
+    > 54 |         expect(screen.getByText('API CALLS')).toBeInTheDocument();
+         |                       ^
+      55 |         expect(screen.getByText('12.4K')).toBeInTheDocument();
+      56 |         // Should not have change indicator
+      57 |         expect(screen.queryByText('Γåæ')).not.toBeInTheDocument();
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/__tests__/StatsWidget.test.tsx:54:23)
+
+FAIL src/components/__tests__/ChatInput.test.tsx
+  ΓùÅ ChatInput Component ΓÇ║ renders input field and send button
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/send/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "≡ƒÆí What documents are available?":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Explain the main concepts":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Summarize the key findings":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒôÄ":
+      <button
+        class="uploadBtn"
+        title="Upload document"
+      />
+
+      Name "Γ₧ñ":
+      <button
+        class="sendBtn"
+        disabled=""
+      />
+
+      --------------------------------------------------
+      textbox:
+
+      Name "":
+      <textarea
+        class="input"
+        placeholder="Ask me anything about your documents..."
+        rows="1"
+      />
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="suggestions"
+          >
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí What documents are available?
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Explain the main concepts
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Summarize the key findings
+            </button>
+          </div>
+          <div
+            class="inputArea"
+          >
+            <button
+              class="uploadBtn"
+              title="Upload document"
+            >
+              ≡ƒôÄ
+            </button>
+            <textarea
+              class="input"
+              placeholder="Ask me anything about your documents..."
+              rows="1"
+            />
+            <button
+              class="sendBtn"
+              disabled=""
+            >
+              <span
+                class="sendIcon"
+              >
+                Γ₧ñ
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </body>
+
+       8 |
+       9 |         expect(screen.getByPlaceholderText('Ask me anything about your documents...')).toBeInTheDocument();
+    > 10 |         expect(screen.getByRole('button', { name: /send/i })).toBeInTheDocument();
+         |                       ^
+      11 |     });
+      12 |
+      13 |     it('renders query suggestions', () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByRole (src/components/__tests__/ChatInput.test.tsx:10:23)
+
+  ΓùÅ ChatInput Component ΓÇ║ calls onSend when send button is clicked
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/send/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "≡ƒÆí What documents are available?":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Explain the main concepts":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Summarize the key findings":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒôÄ":
+      <button
+        class="uploadBtn"
+        title="Upload document"
+      />
+
+      Name "Γ₧ñ":
+      <button
+        class="sendBtn"
+      />
+
+      --------------------------------------------------
+      textbox:
+
+      Name "":
+      <textarea
+        class="input"
+        placeholder="Ask me anything about your documents..."
+        rows="1"
+      />
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="suggestions"
+          >
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí What documents are available?
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Explain the main concepts
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Summarize the key findings
+            </button>
+          </div>
+          <div
+            class="inputArea"
+          >
+            <button
+              class="uploadBtn"
+              title="Upload document"
+            >
+              ≡ƒôÄ
+            </button>
+            <textarea
+              class="input"
+              placeholder="Ask me anything about your documents..."
+              rows="1"
+            >
+              Test message
+            </textarea>
+            <button
+              class="sendBtn"
+            >
+              <span
+                class="sendIcon"
+              >
+                Γ₧ñ
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      27 |         fireEvent.change(input, { target: { value: 'Test message' } });
+      28 |
+    > 29 |         const sendButton = screen.getByRole('button', { name: /send/i });
+         |                                   ^
+      30 |         fireEvent.click(sendButton);
+      31 |
+      32 |         expect(mockOnSend).toHaveBeenCalledWith('Test message');
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByRole (src/components/__tests__/ChatInput.test.tsx:29:35)
+
+  ΓùÅ ChatInput Component ΓÇ║ clears input after sending message
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/send/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "≡ƒÆí What documents are available?":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Explain the main concepts":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Summarize the key findings":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒôÄ":
+      <button
+        class="uploadBtn"
+        title="Upload document"
+      />
+
+      Name "Γ₧ñ":
+      <button
+        class="sendBtn"
+      />
+
+      --------------------------------------------------
+      textbox:
+
+      Name "":
+      <textarea
+        class="input"
+        placeholder="Ask me anything about your documents..."
+        rows="1"
+      />
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="suggestions"
+          >
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí What documents are available?
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Explain the main concepts
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Summarize the key findings
+            </button>
+          </div>
+          <div
+            class="inputArea"
+          >
+            <button
+              class="uploadBtn"
+              title="Upload document"
+            >
+              ≡ƒôÄ
+            </button>
+            <textarea
+              class="input"
+              placeholder="Ask me anything about your documents..."
+              rows="1"
+            >
+              Test message
+            </textarea>
+            <button
+              class="sendBtn"
+            >
+              <span
+                class="sendIcon"
+              >
+                Γ₧ñ
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      40 |         fireEvent.change(input, { target: { value: 'Test message' } });
+      41 |
+    > 42 |         const sendButton = screen.getByRole('button', { name: /send/i });
+         |                                   ^
+      43 |         fireEvent.click(sendButton);
+      44 |
+      45 |         expect(input.value).toBe('');
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByRole (src/components/__tests__/ChatInput.test.tsx:42:35)
+
+  ΓùÅ ChatInput Component ΓÇ║ disables send button when input is empty
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/send/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "≡ƒÆí What documents are available?":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Explain the main concepts":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Summarize the key findings":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒôÄ":
+      <button
+        class="uploadBtn"
+        title="Upload document"
+      />
+
+      Name "Γ₧ñ":
+      <button
+        class="sendBtn"
+        disabled=""
+      />
+
+      --------------------------------------------------
+      textbox:
+
+      Name "":
+      <textarea
+        class="input"
+        placeholder="Ask me anything about your documents..."
+        rows="1"
+      />
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="suggestions"
+          >
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí What documents are available?
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Explain the main concepts
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Summarize the key findings
+            </button>
+          </div>
+          <div
+            class="inputArea"
+          >
+            <button
+              class="uploadBtn"
+              title="Upload document"
+            >
+              ≡ƒôÄ
+            </button>
+            <textarea
+              class="input"
+              placeholder="Ask me anything about your documents..."
+              rows="1"
+            />
+            <button
+              class="sendBtn"
+              disabled=""
+            >
+              <span
+                class="sendIcon"
+              >
+                Γ₧ñ
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      50 |         render(<ChatInput onSend={mockOnSend} />);
+      51 |
+    > 52 |         const sendButton = screen.getByRole('button', { name: /send/i }) as HTMLButtonElement;
+         |                                   ^
+      53 |         expect(sendButton.disabled).toBe(true);
+      54 |     });
+      55 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByRole (src/components/__tests__/ChatInput.test.tsx:52:35)
+
+  ΓùÅ ChatInput Component ΓÇ║ enables send button when input has text
+
+    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/send/i`
+
+    Here are the accessible roles:
+
+      button:
+
+      Name "≡ƒÆí What documents are available?":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Explain the main concepts":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒÆí Summarize the key findings":
+      <button
+        class="suggestion"
+      />
+
+      Name "≡ƒôÄ":
+      <button
+        class="uploadBtn"
+        title="Upload document"
+      />
+
+      Name "Γ₧ñ":
+      <button
+        class="sendBtn"
+      />
+
+      --------------------------------------------------
+      textbox:
+
+      Name "":
+      <textarea
+        class="input"
+        placeholder="Ask me anything about your documents..."
+        rows="1"
+      />
+
+      --------------------------------------------------
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="suggestions"
+          >
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí What documents are available?
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Explain the main concepts
+            </button>
+            <button
+              class="suggestion"
+            >
+              ≡ƒÆí Summarize the key findings
+            </button>
+          </div>
+          <div
+            class="inputArea"
+          >
+            <button
+              class="uploadBtn"
+              title="Upload document"
+            >
+              ≡ƒôÄ
+            </button>
+            <textarea
+              class="input"
+              placeholder="Ask me anything about your documents..."
+              rows="1"
+            >
+              Test
+            </textarea>
+            <button
+              class="sendBtn"
+            >
+              <span
+                class="sendIcon"
+              >
+                Γ₧ñ
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      61 |         fireEvent.change(input, { target: { value: 'Test' } });
+      62 |
+    > 63 |         const sendButton = screen.getByRole('button', { name: /send/i }) as HTMLButtonElement;
+         |                                   ^
+      64 |         expect(sendButton.disabled).toBe(false);
+      65 |     });
+      66 |
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByRole (src/components/__tests__/ChatInput.test.tsx:63:35)
+
+PASS src/components/__tests__/Message.test.tsx
+PASS src/components/__tests__/Sidebar.test.tsx
+PASS src/components/__tests__/Header.test.tsx
+PASS src/components/__tests__/ChatSidebar.test.tsx
+
+Test Suites: 3 failed, 4 passed, 7 total
+Tests:       13 failed, 27 passed, 40 total
+Snapshots:   0 total
+Time:        12.536 s
+Ran all test suites.

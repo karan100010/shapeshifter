@@ -49,11 +49,10 @@ npm install
 - Read the requirements carefully.
 
 ### Step 2: Create a Branch
-Always work in a new branch for each issue:
+Always work in my branch named as Dizzycommits
 ```bash
-# Format: fix/issue-number-description
-git checkout -b fix/issue-42-dashboard-ui
-```
+# Format: dizzycommits
+git checkout -b dizzycommits
 
 ### Step 3: Code & Test
 - Write your code in `src/frontend/`.
@@ -64,7 +63,7 @@ git checkout -b fix/issue-42-dashboard-ui
 ```bash
 git add .
 git commit -m "feat: added dashboard sidebar (fixes #42)"
-git push origin fix/issue-42-dashboard-ui
+git push origin dizzycommits
 ```
 - Go to GitHub and create a **Pull Request**.
 - Tag `@karan100010` for review.

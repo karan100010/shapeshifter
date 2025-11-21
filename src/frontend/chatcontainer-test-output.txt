@@ -1,0 +1,214 @@
+
+> frontend@0.1.0 test
+> jest ChatContainer.test.tsx
+
+FAIL src/components/__tests__/ChatContainer.test.tsx
+  ChatContainer Component
+    ΓêÜ renders initial welcome message (91 ms)
+    ├ù displays typing indicator when sending message (43 ms)
+    ΓêÜ adds user message when sent (23 ms)
+    ΓêÜ displays AI response after delay (1541 ms)
+    ΓêÜ disables input while AI is typing (18 ms)
+    ΓêÜ scrolls to bottom when new message is added (14 ms)
+
+  ΓùÅ ChatContainer Component ΓÇ║ displays typing indicator when sending message
+
+    TestingLibraryElementError: Found multiple elements with the text: ≡ƒñû
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    <div
+      class="avatar"
+    >
+      ≡ƒñû
+    </div>
+
+    Ignored nodes: comments, script, style
+    <div
+      class="avatar"
+    >
+      ≡ƒñû
+    </div>
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    <body>
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="messagesArea"
+          >
+            <div
+              class="messages"
+            >
+              <div
+                class="message assistant"
+              >
+                <div
+                  class="avatar"
+                >
+                  ≡ƒñû
+                </div>
+                <div
+                  class="content"
+                >
+                  <div
+                    class="bubble"
+                  >
+                    <p
+                      class="text"
+                    >
+                      Hello! I'm your RAG assistant. I can help you query documents, find information, and answer questions based on your knowledge base. How can I help you today?
+                    </p>
+                  </div>
+                  <div
+                    class="meta"
+                  >
+                    <span
+                      class="timestamp"
+                    >
+                      12:21 am
+                    </span>
+                    <button
+                      class="copyBtn"
+                      title="Copy message"
+                    >
+                      ≡ƒôï Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="message user"
+              >
+                <div
+                  class="avatar"
+                >
+                  ≡ƒæñ
+                </div>
+                <div
+                  class="content"
+                >
+                  <div
+                    class="bubble"
+                  >
+                    <p
+                      class="text"
+                    >
+                      Test query
+                    </p>
+                  </div>
+                  <div
+                    class="meta"
+                  >
+                    <span
+                      class="timestamp"
+                    >
+                      12:21 am
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="typingIndicator"
+              >
+                <div
+                  class="avatar"
+                >
+                  ≡ƒñû
+                </div>
+                <div
+                  class="typingBubble"
+                >
+                  <span
+                    class="dot"
+                  />
+                  <span
+                    class="dot"
+                  />
+                  <span
+                    class="dot"
+                  />
+                </div>
+              </div>
+              <div />
+            </div>
+          </div>
+          <div
+            class="container"
+          >
+            <div
+              class="suggestions"
+            >
+              <button
+                class="suggestion"
+              >
+                ≡ƒÆí What documents are available?
+              </button>
+              <button
+                class="suggestion"
+              >
+                ≡ƒÆí Explain the main concepts
+              </button>
+              <button
+                class="suggestion"
+              >
+                ≡ƒÆí Summarize the key findings
+              </button>
+            </div>
+            <div
+              class="inputArea"
+            >
+              <button
+                class="uploadBtn"
+                title="Upload document"
+              >
+                ≡ƒôÄ
+              </button>
+              <textarea
+                class="input"
+                disabled=""
+                placeholder="Ask me anything about your documents..."
+                rows="1"
+              />
+              <button
+                aria-label="Send message"
+                class="sendBtn"
+                disabled=""
+              >
+                <span
+                  class="sendIcon"
+                >
+                  Γ₧ñ
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+
+      24 |
+      25 |         // Check for typing indicator
+    > 26 |         expect(screen.getByText('≡ƒñû')).toBeInTheDocument();
+         |                       ^
+      27 |     });
+      28 |
+      29 |     it('adds user message when sent', () => {
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (src/components/__tests__/ChatContainer.test.tsx:26:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 5 passed, 6 total
+Snapshots:   0 total
+Time:        5.719 s
+Ran all test suites matching ChatContainer.test.tsx.
