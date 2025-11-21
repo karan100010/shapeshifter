@@ -17,6 +17,9 @@ scikit-learn
 rank-bm25
 langdetect
 textstat
+rouge-score
+bert-score
+
 
 
 
