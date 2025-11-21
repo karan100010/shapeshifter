@@ -1,0 +1,17 @@
+neo4j
+qdrant-client
+redis
+psycopg2-binary
+pydantic
+pydantic-settings
+fastapi
+uvicorn
+httpx
+pytest
+pytest-asyncio
+spacy
+gliner
+networkx
+numpy
+scikit-learn
+
