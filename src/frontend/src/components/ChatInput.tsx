@@ -34,6 +34,8 @@ export default function ChatInput({ onSend, onFileUpload, disabled = false }: Ch
     const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files.length > 0 && onFileUpload) {
             onFileUpload(e.target.files);
+            // Reset input so the same file can be selected again if needed
+            e.target.value = '';
         }
     };
 

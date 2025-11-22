@@ -1,0 +1,79 @@
+================================================================================
+SHAPESHIFTER RAG SYSTEM - COMPREHENSIVE FUNCTIONALITY TEST
+================================================================================
+
+≡ƒôï TEST 1: Health Check
+--------------------------------------------------------------------------------
+Γ£à Status: healthy
+Γ£à LLM Provider: NVIDIA Gemma 27B
+Γ£à Model: google/gemma-27b-it
+
+≡ƒôï TEST 2: RAG Creation Workflow
+--------------------------------------------------------------------------------
+Step 1: Initiating RAG creation...
+Γ£à RAG creation initiated
+Step 2: Setting personality...
+Γ£à Personality set: Formal and Academic
+Step 3: Naming RAG...
+Γ£à RAG named: Constitution Expert
+
+≡ƒôï TEST 3: DOCX File Upload
+--------------------------------------------------------------------------------
+Γ£à File uploaded: test_article21.docx
+Γ£à Size: 36882 bytes
+Γ£à Status: success
+
+Step 4: Confirming upload...
+Γ£à Upload confirmed
+Step 5: Setting storage name...
+Γ£à RAG creation complete!
+
+≡ƒôï TEST 4: Settings Integration
+--------------------------------------------------------------------------------
+Γ£à Settings accepted and processed
+
+≡ƒôï TEST 5: Context-Based Query
+--------------------------------------------------------------------------------
+Question: How did Maneka Gandhi case transform Article 21?
+
+Answer Preview:
+--------------------------------------------------------------------------------
+According to the provided documentation, the case of *Maneka Gandhi v. Union of India* (1978) transformed Article 21 from a procedural right to a substantive right. Furthermore, the Court stipulated that any procedure established by law must be just, fair, and reasonable. This interpretation subsequently enabled the inclusion of rights such as privacy, education, and a clean environment under the purview of Article 21.
+
+
+
+
+
+---
+
+≡ƒôî **Important Note:** This response is based exclusively on the doc...
+--------------------------------------------------------------------------------
+
+≡ƒôï TEST 6: Response Validation
+--------------------------------------------------------------------------------
+Γ£à Contains 'Maneka Gandhi'
+Γ£à Contains '1978'
+Γ£à Has disclaimer
+Γ£à Source is RAG Context
+Γ£à Answer length > 100 chars
+
+≡ƒôï TEST 7: General Query (No RAG)
+--------------------------------------------------------------------------------
+Γ£à General query has NO disclaimer (correct)
+Γ£à Source: NVIDIA Gemma 27B
+
+================================================================================
+FINAL TEST RESULTS
+================================================================================
+≡ƒÄë ALL TESTS PASSED! ShapeShifter is production-ready!
+
+Γ£à Tested Functionalities:
+   1. Health check endpoint
+   2. RAG creation workflow (personality, naming)
+   3. DOCX file upload and parsing
+   4. Settings integration (LLM, Vector DB)
+   5. Context-based query answering
+   6. Disclaimer on RAG responses
+   7. General queries without RAG
+
+================================================================================

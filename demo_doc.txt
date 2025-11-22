@@ -1,0 +1,6 @@
+This is a sample document for the RAG system.
+It contains information about the ShapeShifter project.
+ShapeShifter is an advanced AI coding assistant.
+It supports RAG (Retrieval-Augmented Generation) creation directly from the chat.
+You can upload files or import from Google Drive.
+The backend uses NVIDIA Gemma 27B for high-quality responses.

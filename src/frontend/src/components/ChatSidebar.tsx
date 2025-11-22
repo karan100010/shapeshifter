@@ -13,9 +13,10 @@ interface ChatSidebarProps {
     activeChat: string;
     onChatSelect: (chatId: string) => void;
     onNewChat: () => void;
+    onSettingsClick?: () => void;
 }
 
-export default function ChatSidebar({ chats, activeChat, onChatSelect, onNewChat }: ChatSidebarProps) {
+export default function ChatSidebar({ chats, activeChat, onChatSelect, onNewChat, onSettingsClick }: ChatSidebarProps) {
     return (
         <aside className={styles.sidebar}>
             <div className={styles.header}>
@@ -48,7 +49,7 @@ export default function ChatSidebar({ chats, activeChat, onChatSelect, onNewChat
             </div>
 
             <div className={styles.footer}>
-                <button className={styles.footerBtn}>
+                <button className={styles.footerBtn} onClick={onSettingsClick}>
                     <span>⚙️</span> Settings
                 </button>
                 <button className={styles.footerBtn}>

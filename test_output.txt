@@ -1,0 +1,11 @@
+================================================================================
+TESTING RAG CONTEXT WITH ARTICLE 21 CONTENT
+================================================================================
+Traceback (most recent call last):
+  File "C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\test_article21_rag.py", line 48, in <module>
+    print("\n1\ufe0f\u20e3 Starting RAG creation...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KunalJoshi\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 3-4: character maps to <undefined>

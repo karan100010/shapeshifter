@@ -1,0 +1,40 @@
+================================================================================
+TESTING RAG CONTEXT WITH ARTICLE 21 CONTENT
+================================================================================
+
+Step 1: Starting RAG creation...
+Response: I'd be happy to help you create a RAG system! Let's customize it first.
+
+**Step 1: Choose a Personal...
+
+Step 2: Setting personality...
+Response: Got it! Your RAG assistant will have a **Formal and Academic** personality.
+
+**Step 2: Name Your RAG...
+
+Step 3: Naming RAG...
+Response: Great! I've noted the RAG name as: **Constitution Expert**
+
+**Step 3: Upload Documents**
+
+Now, pleas...
+
+Step 4: Uploading Constitution document...
+Upload response: {'filename': 'article21_analysis.txt', 'status': 'success', 'message': "File 'article21_analysis.txt' uploaded successfully (1564 bytes)", 'size': 1564}
+
+Step 5: Confirming file upload...
+Response: Perfect! I can see you've uploaded your documents for **Constitution Expert**.
+
+**Step 4: Storage Name**
+
+Finally, what would you like to name the fil...
+
+Step 6: Setting storage name...
+Traceback (most recent call last):
+  File "C:\Users\KunalJoshi\OneDrive - Expense On Demand\Desktop\Shapeshifter\shapeshifter\test_article21_rag.py", line 92, in <module>
+    print(f"Response: {response.json()['response'][:150]}...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KunalJoshi\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f4cb' in position 91: character maps to <undefined>

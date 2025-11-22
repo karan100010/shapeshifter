@@ -2,6 +2,7 @@
 
 import { useState, useRef, DragEvent, ChangeEvent } from 'react';
 import styles from './DocumentUpload.module.css';
+import { api } from '@/lib/api';
 
 interface UploadedFile {
     id: string;
@@ -25,6 +26,35 @@ export default function DocumentUpload({
     const [files, setFiles] = useState<UploadedFile[]>([]);
     const [isDragging, setIsDragging] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
+
+    const [driveId, setDriveId] = useState('');
+
+    const handleDriveUpload = async () => {
+        if (!driveId) return;
+        try {
+            const result = await api.uploadFromGoogleDrive(driveId);
+            // Create a dummy file entry to show in UI
+            const dummyFile = new File([], result.filename);
+            const newEntry: UploadedFile = {
+                id: `${Date.now()}-gdrive-${driveId}`,
+                file: dummyFile,
+                progress: 100,
+                status: 'success',
+                error: undefined,
+            };
+            setFiles(prev => [...prev, newEntry]);
+            // Notify parent if needed
+            if (onUploadComplete) {
+                onUploadComplete([dummyFile]);
+            }
+            setDriveId('');
+        } catch (error) {
+            console.error('Google Drive upload failed:', error);
+            // Optionally show error to user
+        }
+    };
+
+    // Existing code continues below
 
     const validateFile = (file: File): string | null => {
         // Check file size
@@ -60,36 +90,53 @@ export default function DocumentUpload({
         // Simulate upload for valid files
         newFiles.forEach(uploadedFile => {
             if (uploadedFile.status === 'uploading') {
-                simulateUpload(uploadedFile.id);
+                uploadFile(uploadedFile.id, uploadedFile.file);
             }
         });
     };
 
-    const simulateUpload = (fileId: string) => {
-        const interval = setInterval(() => {
+    const uploadFile = async (fileId: string, file: File) => {
+        try {
+            await api.uploadFile(file);
+
             setFiles(prev => prev.map(f => {
                 if (f.id === fileId) {
-                    const newProgress = Math.min(f.progress + 10, 100);
                     return {
                         ...f,
-                        progress: newProgress,
-                        status: newProgress === 100 ? 'success' : 'uploading'
+                        progress: 100,
+                        status: 'success'
                     };
                 }
                 return f;
             }));
-        }, 200);
 
-        setTimeout(() => {
-            clearInterval(interval);
-            setFiles(prev => {
-                const completedFiles = prev.filter(f => f.status === 'success').map(f => f.file);
-                if (completedFiles.length > 0 && onUploadComplete) {
-                    onUploadComplete(completedFiles);
+            // Check if all files are uploaded
+            setFiles(currentFiles => {
+                const allCompleted = currentFiles.every(f => f.status === 'success' || f.status === 'error');
+                if (allCompleted && onUploadComplete) {
+                    const successfulFiles = currentFiles
+                        .filter(f => f.status === 'success')
+                        .map(f => f.file);
+                    if (successfulFiles.length > 0) {
+                        onUploadComplete(successfulFiles);
+                    }
                 }
-                return prev;
+                return currentFiles;
             });
-        }, 2200);
+
+        } catch (error) {
+            console.error('Upload failed:', error);
+            setFiles(prev => prev.map(f => {
+                if (f.id === fileId) {
+                    return {
+                        ...f,
+                        status: 'error',
+                        error: 'Upload failed'
+                    };
+                }
+                return f;
+            }));
+        }
     };
 
     const handleDragEnter = (e: DragEvent<HTMLDivElement>) => {
@@ -161,6 +208,26 @@ export default function DocumentUpload({
                     onChange={handleFileInput}
                     className={styles.fileInput}
                 />
+            </div>
+
+            <div className={styles.googleDriveSection}>
+                <h4>Or import from Google Drive</h4>
+                <div className={styles.driveInputGroup}>
+                    <input
+                        type="text"
+                        placeholder="Enter Google Drive File ID"
+                        value={driveId}
+                        onChange={(e) => setDriveId(e.target.value)}
+                        className={styles.driveInput}
+                    />
+                    <button
+                        onClick={handleDriveUpload}
+                        disabled={!driveId}
+                        className={styles.driveButton}
+                    >
+                        Import
+                    </button>
+                </div>
             </div>
 
             {files.length > 0 && (
